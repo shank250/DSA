@@ -1,5 +1,5 @@
-class Solution:
-    def lengthOfLIS(self, nums: List[int]) -> int:
+# class Solution:
+#     def lengthOfLIS(self, nums: List[int]) -> int:
         # max_ss = 0
         # counter = 0
         # for i in nums:
@@ -14,15 +14,17 @@ class Solution:
         #             counter = 0
         # return max_ss
         # def lengthOfLIS(nums):
-        if not nums:
-            return 0
+nums = [3,4,5,2]
+if not nums:
+    # return 0
+    print(0)
+n = len(nums)
+dp = [1] * n
 
-        n = len(nums)
-        dp = [1] * n
+for i in range(1, n):
+    for j in range(i):
+        if nums[i] > nums[j]:
+            dp[i] = max(dp[i], dp[j] + 1)
 
-        for i in range(1, n):
-            for j in range(i):
-                if nums[i] > nums[j]:
-                    dp[i] = max(dp[i], dp[j] + 1)
-
-        return max(dp)
+# return max(dp)
+print(max(dp))
