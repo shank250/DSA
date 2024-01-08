@@ -25,3 +25,4 @@ class Solution:
                 dp[i][diff] += dp[j][diff] + 1
                 total += dp[j][diff]
         return total
+    
