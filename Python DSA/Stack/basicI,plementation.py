@@ -30,7 +30,7 @@ class Stack:
         else:
             rtn = self.stack[self.topPtr - 1]
             return rtn
-        
+
     def isEmpty(self) -> int:
         return self.topPtr == 0
 
