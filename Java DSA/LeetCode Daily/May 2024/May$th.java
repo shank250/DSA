@@ -4,8 +4,8 @@ import java.util.Collections;
 class Solution {
     public int numRescueBoats(int[] people, int limit) {
                 // Create a new array to store Integer objects
-        Integer[] peopleInteger = new Integer[people.length];
 
+        Integer[] peopleInteger = new Integer[people.length];
         // Populate the new array with Integer objects
         for (int i = 0; i < people.length; i++) {
           peopleInteger[i] = people[i];
