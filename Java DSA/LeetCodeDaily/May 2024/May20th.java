@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 class May20th{
-    public int subsetSum(ArrayList<Integer> subsetArray, int xorSubsetValue){
+    public int subsetSum(Integer integer, int xorSubsetValue){
         int sum = 0;
-        for (int i = 0; i < subsetArray.size(); i++){
-            sum += subsetSum(subsetArray.remove(i), xorSubsetValue^(subsetArray.get(i)));
+        for (int i = 0; i < integer.size(); i++){
+            sum += subsetSum(integer.remove(i), xorSubsetValue^(integer.get(i)));
         }
         return sum;
     }
