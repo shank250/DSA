@@ -1,33 +1,26 @@
-package JavaDSA.TopicWiseQuestions.Tree;
+package Tree;
 
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
-// import javax.swing.tree.MyTreeNode;
-import java.util.Scanner;
-import java.util.LinkedList;
-// DSA.TopicWiseQuestions.Tree;
 
 public class RunnerFile {
-    public  void dfs(MyTreeNode root){
+    public  void dfs(TreeNode root){
         if(root == null) return;
 
         dfs(root.left);
-        System.out.println(root.data);
+        System.out.println(root.val);
         dfs(root.right);
         
         return;
     }
 
-
     public static void main(String[] args) {
-        // MyTreeNode root = new MyTreeNode(1);
-        // root.left = new MyTreeNode(2);
-        // root.right = new MyTreeNode(3);
-        // root.left.left = new MyTreeNode(4);
-        // root.right.left = new MyTreeNode(5);
-        // root.right.left.right = new MyTreeNode(6);
+        // TreeNode root = new TreeNode(1);
+        // root.left = new TreeNode(2);
+        // root.right = new TreeNode(3);
+        // root.left.left = new TreeNode(4);
+        // root.right.left = new TreeNode(5);
+        // root.right.left.right = new TreeNode(6);
         // MorrisTraversal traversal = new MorrisTraversal();
         // args.forEach(System.out::print);
         // for(String st : args){
@@ -37,44 +30,45 @@ public class RunnerFile {
         String input = scan.nextLine();
         // String input = args[1];
         String[] listinp = input.split(" ");
-        Queue<MyTreeNode> queue = new LinkedList<MyTreeNode>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
         if(listinp.length == 0){
             System.out.println("No input found!");
             return;
         }
 
-        MyTreeNode root = new MyTreeNode(Integer.parseInt(listinp[0])); // axxuming the first node value is in int
+        TreeNode root = new TreeNode(Integer.parseInt(listinp[0])); // axxuming the first node value is in int
         queue.offer(root);
-        MyTreeNode temp = root;
+        TreeNode temp = root;
         // take two consicutive elements from the listint and then 
         // map each of them to the head of the queue(use poll) and then
         //  add the newly created nodes to the queue
         int ind = 1, limit = listinp.length;
         while(ind < limit){
-            MyTreeNode oldNode = queue.poll();
+            TreeNode oldNode = queue.poll();
 
             if(!listinp[ind].equals("null")){
-                MyTreeNode newNodeLeft = new MyTreeNode(Integer.parseInt(listinp[ind]));
+                TreeNode newNodeLeft = new TreeNode(Integer.parseInt(listinp[ind]));
                 oldNode.left = newNodeLeft;
                 queue.offer(newNodeLeft);
             }
             ind++;
             if(ind < limit && !listinp[ind].equals("null")){
-                MyTreeNode newNodeRight = new MyTreeNode(Integer.parseInt(listinp[ind]));
+                TreeNode newNodeRight = new TreeNode(Integer.parseInt(listinp[ind]));
                 oldNode.right = newNodeRight;
                 queue.offer(newNodeRight);
             }
             ind++;
         } 
-        // RunnerFile run =  new RunnerFile();
 
-        // run.dfs(temp);
-        List<Integer> list = new ArrayList<>();
-        MorrisTraversal traversal = new MorrisTraversal();
-        list = traversal.inorder(temp, list);
-        list.forEach(System.out::print);
+        // List<Integer> list = new ArrayList<>();
+        // MorrisTraversal traversal = new MorrisTraversal();
+        // list = traversal.inorder(temp, list);
+        // list.forEach(System.out::print);
 
+        Q103 que = new Q103();
+        List<List<Integer>> ans  =  que.zigzagLevelOrder(temp);
+        ans.forEach(System.out::print);
 
 
     }
