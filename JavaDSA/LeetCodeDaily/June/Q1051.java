@@ -1,7 +1,7 @@
 /**
  * Q1051
  */
-import java.util.*;
+// import java.util.*;
 public class Q1051 {
     public static void main(String[] args) {
         int[] heights = {1,1,4,2,1,3};
