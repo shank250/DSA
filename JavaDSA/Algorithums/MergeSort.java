@@ -8,6 +8,7 @@ public class MergeSort {
         
             conquer(arr, start, mid, end);
         }
+        return;
     }
     private static void conquer(int[] arr, int start, int mid, int end){
 
