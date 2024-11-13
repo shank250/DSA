@@ -17,13 +17,13 @@ class Interview{
 }
 class ServiceNow extends Interview{
     ServiceNow(){
-        System.out.println(" Welcome to ServiceNow Academy ");
+        System.out.println(" Welcome to  ");
     }
     ServiceNow(int x){
         super();
         // this();
         
-        System.out.println(" Welcome to ServiceNow Academy 2");
+        System.out.println(" Welcome to   Academy 2");
     }
 }
 
